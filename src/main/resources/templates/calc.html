@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src="/js/jquery-3.4.0.min.js"></script>
+
+</head>
+<body>
+<h1>результат</h1>
+
+
+<table class="">
+    <thead>
+    <tr>
+
+        <th>Номер</th>
+        <th>Ежемесячный</th>
+        <th>проценты</th>
+        <th>тело кредита</th>
+        <th>остаток</th>
+        <th>дата</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="payment : ${payments}">
+
+        <td th:text="${payment.numberPayment}"/>
+        <td th:text="${payment.monthlyPayment}"/>
+        <td th:text="${payment.percentMonths}"/>
+        <td th:text="${payment.debt}"/>
+        <td th:text="${payment.balanceAmount}"/>
+        <td th:text="${payment.datePayment}"/>
+
+    </tr>
+
+
+    </tbody>
+</table>
+
+</body>
+</html>
